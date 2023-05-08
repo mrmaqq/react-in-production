@@ -1,6 +1,7 @@
 import { Suspense, useMemo } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
+import { PageLoader } from 'widgets';
 import { routeConfig } from '../lib/routeConfig';
 
 export const AppRouter = () => {
@@ -16,7 +17,7 @@ export const AppRouter = () => {
         )), []);
 
     return (
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<PageLoader />}>
             <Routes>
                 {routeConfigNode}
             </Routes>
